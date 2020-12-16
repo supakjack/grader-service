@@ -17,7 +17,7 @@ const accessLogStream = fs.createWriteStream(
   { flags: 'a' }
 )
 
-app.use(cors())
+app.use(cors({ origin: false }))
 app.use(morgan('combined', { stream: accessLogStream }))
 app.use(morgan('dev'))
 app.use(express.json())
